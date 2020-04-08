@@ -1,4 +1,4 @@
-export const data =
+const data =
 {
     region: {
         name: "Africa",
@@ -17,3 +17,4 @@ export const data =
 
 
 }
+export default data;
