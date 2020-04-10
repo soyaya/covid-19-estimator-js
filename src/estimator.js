@@ -31,7 +31,7 @@ severeImpact.currentlyInfected = data.reportedCases * 50;
 impact.infectionsByRequestedTime = impact.currentlyInfected * 2 ** n;
 severeImpact.infectionsByRequestedTime = severImpact.currentlyInfected * 2 ** n;
 
-impact.severeCasesByRequestedTime = math.ceil(0.15 * impact.infectionsByRequestedTime);
+impact.severeCasesByRequestedTime = Math.ceil(0.15 * impact.infectionsByRequestedTime);
 severeImpact.severeCasesByRequestedTime = Math.ceil(0.15 * severeImpact.infectionsByRequestedTime);
 
 impact.hospitalBedsByRequestedTime = Math.ceil(impact.severeCasesByRequestedTime - 0.35 * data.totalHospitalBeds);
@@ -43,8 +43,8 @@ severeImpact.casesForICUByRequestedTime = 0.05 * severeImpact.infectionsByReques
 impact.casesForVentilatorsByRequestedTime = 0.02 * impact.infectionsByRequestedTime;
 severeImpact.casesForVentilatorsByRequestedTime = 0.02 * severeImpact.infectionsByRequestedTime;
 
-impact.dollarsInFlight = Math.trunc(impact.infectionsByRequestedTime * avgDailyIncomeInUSD * days);
-severeImpact.dollarsInFlight = Math.trunc(severeImpact.infectionsByRequestedTime * avgDailyIncomeInUSD * days);
+impact.dollarsInFlight = Math.trunc((impact.infectionsByRequestedTime * avgDailyIncomeInUSD )/days);
+severeImpact.dollarsInFlight = Math.trunc((severeImpact.infectionsByRequestedTime * avgDailyIncomeInUSD)/days);
 
 const covid19ImpactEstimator =()=>{
   return {
