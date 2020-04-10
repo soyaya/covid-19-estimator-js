@@ -16,14 +16,15 @@ const severeImpact;
 let days;
 if (data.periodType === 'days') {
   days = data.timeToElapse
-}
-if (data.periodType === 'week') {
-  days = 7 * data.timeToElapse
-}
-if (data.periodType === 'month') 
-  { days = 30 * data.timeToElapse };
+  } elseif (data.periodType === 'week') 
+{days = 7 * data.timeToElapse
+ } elseif (data.periodType === 'month')
+  { days = 30 * data.timeToElapse};
 
-const n = Math.ceil(days / 3);
+
+
+
+  const n = Math.ceil(days / 3);
 
 
 impact.currentlyInfected = data.reportedCases * 10;
