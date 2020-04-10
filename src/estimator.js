@@ -1,10 +1,10 @@
 const data = {
-    region: {
-        name: 'Africa',
-        avgAge: 19.7,
-        avgDailyIncomeInUSD: 5,
-        avgDailyIncomePopulation: 0.71
-    },
+  region: {
+    name: 'Africa',
+    avgAge: 19.7,
+    avgDailyIncomeInUSD: 5,
+    avgDailyIncomePopulation: 0.71
+},
     periodType: 'day',
     timeToElapse: 58,
     reportedCases: 674,
@@ -46,11 +46,11 @@ severeImpact.dollarsInFlight = Math.trunc(severeImpact.infectionsByRequestedTime
 
 const covid19ImpactEstimator = () => {
 
-    return {
-        data: {},
-        impact: {},
-        severeImpact: {}
-    }
+  return {
+    data: {},
+    impact: {},
+    severeImpact: {}
+}
 };
 
 export default covid19ImpactEstimator;
