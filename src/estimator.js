@@ -4,21 +4,21 @@ const data = {
     avgAge: 19.7,
     avgDailyIncomeInUSD: 5,
     avgDailyIncomePopulation: 0.71
-},
-    periodType: 'day',
-    timeToElapse: 58,
-    reportedCases: 674,
-    population: 66622705,
-    totalHospitalBeds: 1380614
+  },
+  periodType: 'day',
+  timeToElapse: 58,
+  reportedCases: 674,
+  population: 66622705,
+  totalHospitalBeds: 1380614
 };
 
 let days;
 if (data.periodType === 'days') {
-    days = data.timeToElapse;
-};
+  days = data.timeToElapse;
+}
 if (data.periodType === 'week') {
-    days = 7 * data.timeToElapse
-};
+  days = 7 * data.timeToElapse
+}
 if (data.periodType === 'month') { days = 30 * data.timeToElapse };
 
 const n = Math.ceil(days / 3);
