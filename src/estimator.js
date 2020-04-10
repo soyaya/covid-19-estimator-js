@@ -18,7 +18,8 @@ if (data.periodType === 'days') {
   days = data.timeToElapse
   } elseif (data.periodType === 'week') 
 {days = 7 * data.timeToElapse
- } elseif (data.periodType === 'month')
+ } 
+if (data.periodType === 'month')
   { days = 30 * data.timeToElapse};
 
 
