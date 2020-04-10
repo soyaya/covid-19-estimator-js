@@ -15,7 +15,7 @@ const impact;
 const severeImpact; 
 let days;
 if (data.periodType === 'days') {
-  days = data.timeToElapse;
+  days = data.timeToElapse
 }
 if (data.periodType === 'week') {
   days = 7 * data.timeToElapse
