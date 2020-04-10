@@ -11,7 +11,8 @@ const data = {
   population: 66622705,
   totalHospitalBeds: 1380614
 };
-
+const impact; 
+const severeImpact; 
 let days;
 if (data.periodType === 'days') {
   days = data.timeToElapse;
@@ -19,7 +20,8 @@ if (data.periodType === 'days') {
 if (data.periodType === 'week') {
   days = 7 * data.timeToElapse
 }
-if (data.periodType === 'month') { days = 30 * data.timeToElapse };
+if (data.periodType === 'month') 
+  { days = 30 * data.timeToElapse };
 
 const n = Math.ceil(days / 3);
 
@@ -30,7 +32,7 @@ impact.infectionsByRequestedTime = impact.currentlyInfected * 2 ** n;
 severeImpact.infectionsByRequestedTime = severImpact.currentlyInfected * 2 ** n;
 
 impact.severeCasesByRequestedTime = math.ceil(0.15 * impact.infectionsByRequestedTime);
-severeImpact.severeCasesByRequestedTime = math.ceil(0.15 * severeImpact.infectionsByRequestedTime);
+severeImpact.severeCasesByRequestedTime = Math.ceil(0.15 * severeImpact.infectionsByRequestedTime);
 
 impact.hospitalBedsByRequestedTime = Math.ceil(impact.severeCasesByRequestedTime - 0.35 * data.totalHospitalBeds);
 severeImpact.hospitalBedsByRequestedTime = Math.ceil(severeImpact.severeCasesByRequestedTime - 0.35 * data.totalHospitalBeds);
@@ -44,13 +46,12 @@ severeImpact.casesForVentilatorsByRequestedTime = 0.02 * severeImpact.infections
 impact.dollarsInFlight = Math.trunc(impact.infectionsByRequestedTime * avgDailyIncomeInUSD * days);
 severeImpact.dollarsInFlight = Math.trunc(severeImpact.infectionsByRequestedTime * avgDailyIncomeInUSD * days);
 
-const covid19ImpactEstimator = () => {
-
+const covid19ImpactEstimator =()=>{
   return {
     data: {},
     impact: {},
-    severeImpact: {}
-}
+    severeImpact:{}
+  }
 };
 
 export default covid19ImpactEstimator;
