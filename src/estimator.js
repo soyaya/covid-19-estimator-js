@@ -1,33 +1,42 @@
-import { data } from './server'
-
-const futureTime = data.comp.timeToElapse;
-const dateNow = new Date();
-const nowday = dateNow.getDate();
-const period = ({ nowday, futureTime }) => { return futureTime - nowday }
-const n = maths.round({ period } / 3);
-
-const impact = () => {
-    return {
-        currentlyInfected = ({ reportedCases }) => {
-            return reportedCases * 10
-        }
-    }
+const data = {
+    region: {
+        name: 'Africa',
+        avgAge: 19.7,
+        avgDailyIncomeInUSD: 5,
+        avgDailyIncomePopulation: 0.71
+    },
+    periodType: 'day',
+    timeToElapse: 58,
+    reportedCases: 674,
+    population: 66622705,
+    totalHospitalBeds: 1380614
 };
 
-const severeImpact = () => {
-    return {
-        currentlyInfected = ({ reportedCases }) => {
-            return reportedCases * 50
-        }
-    }
-};
+let days;
+if (data.periodType === 'days') {
+    days = data.timeToElapse;
+}
+if (data.periodType === 'week') {
+    days = 7 * data.timeToElapse
+}
+if (data.periodType === 'month') { days = 30 * data.timeToElapse };
 
-const infectionsByRequestedTime1 = ({ n, impact }) => { return (impact * 2 ^ n) };
+const n = Math.ceil(days / 3)
+
+impact.currentlyInfected = data.reportedCases * 10;
+severeImpact.currentlyInfected = data.reportedCases * 50;
+impact.infectionsByRequestedTime = impact.currentlyInfected * 2 ^ n;
+severeImpact.infectionsByRequestedTime = severImpact.currentlyInfected * 2 ^ n;
+
+const infectionsByRequestedTime1 = ({ n, impact.currentlyInfected, days }) => {
+    if (days < 3) { impact.currentlyInfected }
+    else (days > 3){ { impact.currentlyInfected } * (2 ^ n) }
+};
 
 const impactrate = infectionsByRequestedTime1;
 
-const infectionsByRequestedTime2 = ({ n, severeImpact }) => {
-    return (severeImpact * 2 ^ n)
+const infectionsByRequestedTime2 = ({ n, severeImpact.currentlyInfected }) => {
+    return (severeImpact.currentlyInfected * 2 ^ n)
 };
 
 const severeImpactrate = infectionsByRequestedTime2;
