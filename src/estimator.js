@@ -15,12 +15,12 @@ const impact;
 const severeImpact; 
 let days;
 if (data.periodType === 'days') {
-  days = data.timeToElapse
+  days = data.timeToElapse;
   } elseif (data.periodType === 'week') 
-{days = 7 * data.timeToElapse
+{days = 7 * data.timeToElapse;
  } 
 if (data.periodType === 'month')
-  { days = 30 * data.timeToElapse};
+  { days = 30 * data.timeToElapse;}
 
 
 
