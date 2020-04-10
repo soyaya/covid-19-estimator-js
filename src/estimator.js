@@ -47,9 +47,9 @@ severeImpact.dollarsInFlight = Math.trunc(severeImpact.infectionsByRequestedTime
 const covid19ImpactEstimator = () => {
 
     return {
-        data: {}, // the input data you got
-        impact: {}, // your best case estimation
-        severeImpact: {} // your severe case estimation
+        data: {},
+        impact: {},
+        severeImpact: {}
     }
 };
 
