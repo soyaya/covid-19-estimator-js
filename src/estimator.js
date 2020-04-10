@@ -10,8 +10,9 @@ const data = {
   reportedCases: 674,
   population: 66622705,
   totalHospitalBeds: 1380614
-}
-
+};
+const impact; 
+const severeImpact; 
 let days;
 if (data.periodType === 'days') {
   days = data.timeToElapse;
@@ -21,11 +22,7 @@ if (data.periodType === 'days') {
 if (data.periodType === 'month')
   { days = 30 * data.timeToElapse;}
 
-
-
-
-  const n = Math.ceil(days / 3);
-
+const n = Math.ceil(days / 3);
 
 impact.currentlyInfected = data.reportedCases * 10;
 severeImpact.currentlyInfected = data.reportedCases * 50;
