@@ -43,8 +43,8 @@ severeImpact.casesForICUByRequestedTime = 0.05 * severeImpact.infectionsByReques
 impact.casesForVentilatorsByRequestedTime = 0.02 * impact.infectionsByRequestedTime;
 severeImpact.casesForVentilatorsByRequestedTime = 0.02 * severeImpact.infectionsByRequestedTime;
 
-impact.dollarsInFlight = Math.trunc((impact.infectionsByRequestedTime * avgDailyIncomeInUSD )/days);
-severeImpact.dollarsInFlight = Math.trunc((severeImpact.infectionsByRequestedTime * avgDailyIncomeInUSD)/days);
+impact.dollarsInFlight = Math.trunc((impact.infectionsByRequestedTime * data.avgDailyIncomeInUSD * data.avgDailyIncomePopulation  )/days);
+severeImpact.dollarsInFlight = Math.trunc((severeImpact.infectionsByRequestedTime * avgDailyIncomeInUSD * data.avgDailyIncomePopulation)/days);
 
 const covid19ImpactEstimator =()=>{
   return {
