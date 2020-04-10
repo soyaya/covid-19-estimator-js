@@ -28,18 +28,9 @@ severeImpact.currentlyInfected = data.reportedCases * 50;
 impact.infectionsByRequestedTime = impact.currentlyInfected * 2 ^ n;
 severeImpact.infectionsByRequestedTime = severImpact.currentlyInfected * 2 ^ n;
 
-const infectionsByRequestedTime1 = ({ n, impact.currentlyInfected, days }) => {
-    if (days < 3) { impact.currentlyInfected }
-    else (days > 3){ { impact.currentlyInfected } * (2 ^ n) }
-};
+impact.severeCasesByRequestedTime = 0.15 * impact.infectionsByRequestedTime;
+severeImpact.severeCasesByRequestedTime = 0.15 * severeImpact.infectionsByRequestedTime;
 
-const impactrate = infectionsByRequestedTime1;
-
-const infectionsByRequestedTime2 = ({ n, severeImpact.currentlyInfected }) => {
-    return (severeImpact.currentlyInfected * 2 ^ n)
-};
-
-const severeImpactrate = infectionsByRequestedTime2;
 
 const covid19ImpactEstimator = ({ data, impact, severeImpact }) => {
 
