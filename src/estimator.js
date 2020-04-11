@@ -18,7 +18,7 @@ const impact = {
   hospitalBedsByRequestedTime: '',
   casesForICUByRequestedTime: '',
   casesForVentilatorsByRequestedTime: '',
-  dollarsInFlight: '' ,}
+  dollarsInFlight: '', };
 let severeImpact;
 let days;
 
