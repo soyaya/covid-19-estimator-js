@@ -10,9 +10,9 @@ const data = {
   reportedCases: 674,
   population: 66622705,
   totalHospitalBeds: 1380614
-};
-const impact; 
-const severeImpact; 
+}
+const impact 
+const severeImpact 
 const days=()=>{
 if (data.periodType === 'days') {
   days = data.timeToElapse;
