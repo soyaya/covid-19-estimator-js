@@ -20,7 +20,15 @@ const impact = {
   casesForVentilatorsByRequestedTime: '',
   dollarsInFlight: ''
 };
-let severeImpact;
+const severeImpact = {
+    currentlyInfected: '',
+    infectionsByRequestedTime: '',
+    severeCasesByRequestedTime: '',
+    hospitalBedsByRequestedTime: '',
+    casesForICUByRequestedTime: '',
+    casesForVentilatorsByRequestedTime: '',
+    dollarsInFlight: ''
+  };
 let days;
 
 if (data.periodType === 'days') { days = data.timeToElapse; }
