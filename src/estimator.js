@@ -13,7 +13,7 @@ const data = {
 }
 const impact 
 const severeImpact 
-const days=()=>{
+let days=()=>{
 if (data.periodType === 'days') {
   days = data.timeToElapse;
   } elseif (data.periodType === 'week') 
