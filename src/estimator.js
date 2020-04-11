@@ -18,7 +18,7 @@ const impact = {
   hospitalBedsByRequestedTime: '',
   casesForICUByRequestedTime: '',
   casesForVentilatorsByRequestedTime: '',
-  dollarsInFlight: '' 
+  dollarsInFlight: ''
 };
 let severeImpact;
 let days;
@@ -29,7 +29,7 @@ else if (data.periodType === 'months') { days = 30 * data.timeToElapse; }
 else { days = data.timeToElapse; }
 
 const n = Math.ceil(days / 3);
-impact.currentlyInfected = data.reportedCases * 10; 
+impact.currentlyInfected = data.reportedCases * 10;
 severeImpact.currentlyInfected = data.reportedCases * 50;
 impact.infectionsByRequestedTime = impact.currentlyInfected * 2 ** n;
 severeImpact.infectionsByRequestedTime = severeImpact.currentlyInfected * 2 ** n;
