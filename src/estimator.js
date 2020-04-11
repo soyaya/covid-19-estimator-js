@@ -13,14 +13,12 @@ const data = {
 };
 let impact;
 let severeImpact;
-const days = (data.periodType, data.timeToElapse) => {
- if (data.periodType === 'days') {
-  days = data.timeToElapse;
-} elseif (data.periodType === 'week') 
-{ days = 7 * data.timeToElapse;
-} if (data.periodType === 'month') {
-  days = 30 * data.timeToElapse}
-}
+let days;
+
+if (data.periodType === 'days') { days = data.timeToElapse; }
+else if (data.periodType === 'weeks') { days = 7 * data.timeToElapse; }
+else if (data.periodType === 'months') { days = 30 * data.timeToElapse; }
+else { days = data.timeToElapse; }
 
 const n = Math.ceil(days / 3);
 

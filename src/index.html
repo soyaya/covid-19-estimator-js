@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Covid-19 Estimator</title>
+  </head>
+  <body>
+    <div><Nav style="background-image: url(pix.jpg); height: 10rem;"><h1 style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color: aliceblue; margin-left: 6rem;">Covid-19 Impact Estimator within regions in African</h1></Nav></div>
+
+    <div class="container">
+        <div class="row">
+          <div class="col-sm-2">
+            <header>Region and data</header>
+            <div>name: "Africa",
+                avgAge: 19.7,
+                avgDailyIncomeInUSD: 5,
+                avgDailyIncomePopulation: 0.71</div>
+          </div>
+          <div class="col-sm-8">
+              <header style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; justify-content: center;">Input Estimation Data</header>
+            <div class = "card"><form>
+                <div class="form-group">
+                  <label for="Enter population of region">population</label>
+                  <input type="number" value = "data-population"class="form-control" id="exampleInputEmail1" placeholder="Enter Population of your region">
+                </div>
+                <div class="form-group">
+                    <label for="Enter future number of days you want to see impact ">timeToElapse</label>
+                    <input type="number" value = "data-time-to-elapse" class="form-control"  placeholder="Enter future number of days you want to see impact">
+                  </div>
+                  <div class="form-group">
+                    <label>reportedCases</label>
+                    <input type="number" value = "data-reported-cases" class="form-control"  placeholder="Enter the number of reported cases">
+                  </div>
+                  <div class="form-group">
+                    <label>totalHospitalBeds</label>
+                    <input type="number" value = "data-total-hospital-beds" class="form-control"  placeholder="Enter the number of total hospital beds in your region">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="inputState">Period Type</label>
+                    <select id="inputState" class="form-control" value = "data-period-type">
+                      <option>Day</option>
+                      <option>Week</option>
+                      <option>Month</option>
+                    </select>
+                  </div>
+                <button type="submit" class="btn btn-primary" value = "data-go-
+                estimate.">Submit</button>
+              </form></div>
+          </div>
+          <div class="col-sm">
+            <header>See your result</header>
+          </div>
+        </div>
+      </div>
+
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
