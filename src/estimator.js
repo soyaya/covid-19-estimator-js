@@ -21,14 +21,14 @@ const impact = {
   dollarsInFlight: ''
 };
 const severeImpact = {
-    currentlyInfected: '',
-    infectionsByRequestedTime: '',
-    severeCasesByRequestedTime: '',
-    hospitalBedsByRequestedTime: '',
-    casesForICUByRequestedTime: '',
-    casesForVentilatorsByRequestedTime: '',
-    dollarsInFlight: ''
-  };
+  currentlyInfected: '',
+  infectionsByRequestedTime: '',
+  severeCasesByRequestedTime: '',
+  hospitalBedsByRequestedTime: '',
+  casesForICUByRequestedTime: '',
+  casesForVentilatorsByRequestedTime: '',
+  dollarsInFlight: ''
+};
 let days;
 
 if (data.periodType === 'days') { days = data.timeToElapse; }
