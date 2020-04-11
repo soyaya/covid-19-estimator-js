@@ -11,8 +11,8 @@ const data = {
   population: 66622705,
   totalHospitalBeds: 1380614
 }
-const impact 
-const severeImpact 
+let impact 
+let severeImpact 
 let days=()=>{
 if (data.periodType === 'days') {
   days = data.timeToElapse;
