@@ -10,16 +10,16 @@ const data = {
   reportedCases: 674,
   population: 66622705,
   totalHospitalBeds: 1380614
-}
-let impact 
-let severeImpact 
-let days=()=>{
-if (data.periodType === 'days') {
-  days = data.timeToElapse;
-  } elseif (data.periodType === 'week') 
+};
+let impact;
+let severeImpact;
+let days = () => {
+  if(data.periodType === 'days') {
+    days = data.timeToElapse;
+  }elseif(data.periodType === 'week') 
 {days = 7 * data.timeToElapse;
  } 
-if (data.periodType === 'month')
+ if(data.periodType === 'month')
   { days = 30 * data.timeToElapse;
 }
 };
