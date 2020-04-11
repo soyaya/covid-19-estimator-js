@@ -11,7 +11,15 @@ const data = {
   population: 66622705,
   totalHospitalBeds: 1380614
 };
-let impact;
+let impact= {
+    currentlyInfected:'',
+    infectionsByRequestedTime:'',
+    severeCasesByRequestedTime:'',
+    hospitalBedsByRequestedTime:'',
+    casesForICUByRequestedTime:'',
+    casesForVentilatorsByRequestedTime:'',
+    dollarsInFlight:''};
+    
 let severeImpact;
 let days;
 
@@ -21,8 +29,8 @@ else if (data.periodType === 'months') { days = 30 * data.timeToElapse; }
 else { days = data.timeToElapse; }
 
 const n = Math.ceil(days / 3);
-let currentlyInfected;
-impact.currentlyInfected = () => { data.reportedCases * 10 };
+
+impact.currentlyInfected = data.reportedCases * 10; 
 severeImpact.currentlyInfected = data.reportedCases * 50;
 impact.infectionsByRequestedTime = impact.currentlyInfected * 2 ** n;
 severeImpact.infectionsByRequestedTime = severeImpact.currentlyInfected * 2 ** n;
