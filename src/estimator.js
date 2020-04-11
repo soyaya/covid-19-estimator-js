@@ -11,17 +11,16 @@ const data = {
   population: 66622705,
   totalHospitalBeds: 1380614
 };
-let impact;
-let severeImpact;
-let days = () => {
-  if(data.periodType === 'days') {
+const impact;
+const severeImpact;
+let days;
+  if (data.periodType === 'days') {
     days = data.timeToElapse;
   }elseif(data.periodType === 'week') 
-{days = 7 * data.timeToElapse;
- } 
- if(data.periodType === 'month')
-  { days = 30 * data.timeToElapse;
-}
+    {days = 7 * data.timeToElapse;
+  } 
+  if(data.periodType === 'month')
+   { days = 30 * data.timeToElapse;
 };
 
 const n = Math.ceil(days / 3);
