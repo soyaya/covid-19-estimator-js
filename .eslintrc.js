@@ -19,7 +19,6 @@ module.exports = {
   rules: {
     "comma-dangle": ["error", "never"],
     "no-param-reassign": ["error", { "props": false }],
-    "linebreak-style": ["error", "windows"],
     "arrow-body-style": ["error", "always"],
     "max-len": ["error", { "code": 150 }],
     "brace-style": [2, "stroustrup", { "allowSingleLine": true }]
