@@ -30,7 +30,7 @@ const covid19ImpactEstimator = () => {
     return getFactor;
   };
   const impact = {};
-  const severeImpact = {}; 
+  const severeImpact = {};
   const currentlyInfected1 = data.reportedCases * 10;
   const trunk = () => {
     return currentlyInfected1 * 2 ** factor;
