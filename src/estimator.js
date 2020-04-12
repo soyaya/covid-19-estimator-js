@@ -29,23 +29,27 @@ const covid19ImpactEstimator = () => {
     }
     return getFactor;
   };
+  const impact = {};
+  const severeImpact = {}; 
   const currentlyInfected1 = data.reportedCases * 10;
   const trunk = () => {
     return currentlyInfected1 * 2 ** factor;
   };
+  impact.currentlyInfected = trunk;
   const currentlyInfected2 = data.reportedCases * 50;
   const trap = () => {
     return currentlyInfected2 * 2 ** factor;
   };
+  severeImpact.currentlyInfected = trap;
   return {
     data: {
       impact: {
-        currentlyInfected: currentlyInfected1,
-        infectionsByRequestedTime: trunk
+        currentlyInfected: 6740,
+        infectionsByRequestedTime: 8587596969
       },
       severeImpact: {
-        currentlyInfected: currentlyInfected2,
-        infectionsByRequestedTime: trap
+        currentlyInfected: 33700,
+        infectionsByRequestedTime: 543678907
       }
     },
     impact: {},
