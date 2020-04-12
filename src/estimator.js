@@ -30,7 +30,13 @@ const severeImpact = {
   dollarsInFlight: ''
 };
 let days;
-
+let currentlyInfected;
+let infectionsByRequestedTime;
+let severeCasesByRequestedTime;
+let hospitalBedsByRequestedTime;
+let casesForICUByRequestedTime;
+let casesForVentilatorsByRequestedTime;
+let dollarsInFlight;
 if (data.periodType === 'days') { days = data.timeToElapse; }
 else if (data.periodType === 'weeks') { days = 7 * data.timeToElapse; }
 else if (data.periodType === 'months') { days = 30 * data.timeToElapse; }
