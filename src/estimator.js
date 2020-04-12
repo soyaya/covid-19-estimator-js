@@ -56,10 +56,11 @@ const covid19ImpactEstimator = () => {
       severeImpact: {
         currentlyInfected: '',
         infectionsByRequestedTime: ''
-      }
-    },
+      },
     impact: {},
     severeImpact: {}
-  };
+  }
 };
+};
+
 export default covid19ImpactEstimator;
