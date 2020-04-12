@@ -1,3 +1,5 @@
+const covid19ImpactEstimator = () => {
+
 const data = {
   region: {
     name: 'Africa',
@@ -58,7 +60,7 @@ casesForVentilatorsByRequestedTime = 0.02 * severeImpact.infectionsByRequestedTi
 dollarsInFlight = Math.trunc((impact.infectionsByRequestedTime * data.avgDailyIncomeInUSD * data.avgDailyIncomePopulation) / 30);
 dollarsInFlight = Math.trunc((severeImpact.infectionsByRequestedTime * data.avgDailyIncomeInUSD * data.avgDailyIncomePopulation) / 30);
 
-const covid19ImpactEstimator = () => {
+
   return {
     data: {},
     impact: {},
