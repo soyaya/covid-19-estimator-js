@@ -11,26 +11,29 @@ const data = {
   population: 66622705,
   totalHospitalBeds: 1380614
 };
-const impact = {
-  currentlyInfected: '',
-  infectionsByRequestedTime: '',
-  severeCasesByRequestedTime: '',
-  hospitalBedsByRequestedTime: '',
-  casesForICUByRequestedTime: '',
-  casesForVentilatorsByRequestedTime: '',
-  dollarsInFlight: ''
-};
-const severeImpact = {
-  currentlyInfected: '',
-  infectionsByRequestedTime: '',
-  severeCasesByRequestedTime: '',
-  hospitalBedsByRequestedTime: '',
-  casesForICUByRequestedTime: '',
-  casesForVentilatorsByRequestedTime: '',
-  dollarsInFlight: ''
-};
-let days;
-
+outPut = {
+  impact: {
+    currentlyInfected: '',
+    infectionsByRequestedTime: '',
+    severeCasesByRequestedTime: '',
+    hospitalBedsByRequestedTime: '',
+    casesForICUByRequestedTime: '',
+    casesForVentilatorsByRequestedTime: '',
+    dollarsInFlight: ''
+  },
+  severeImpact = {
+    currentlyInfected: '',
+    infectionsByRequestedTime: '',
+    severeCasesByRequestedTime: '',
+    hospitalBedsByRequestedTime: '',
+    casesForICUByRequestedTime: '',
+    casesForVentilatorsByRequestedTime: '',
+    dollarsInFlight: ''
+  },
+  impact: {},
+  severeImpact: {},
+}
+  
 if (data.periodType === 'days') { days = data.timeToElapse; }
 else if (data.periodType === 'weeks') { days = 7 * data.timeToElapse; }
 else if (data.periodType === 'months') { days = 30 * data.timeToElapse; }
