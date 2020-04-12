@@ -11,29 +11,26 @@ const data = {
   population: 66622705,
   totalHospitalBeds: 1380614
 };
-outPut = {
-  impact: {
-    currentlyInfected: '',
-    infectionsByRequestedTime: '',
-    severeCasesByRequestedTime: '',
-    hospitalBedsByRequestedTime: '',
-    casesForICUByRequestedTime: '',
-    casesForVentilatorsByRequestedTime: '',
-    dollarsInFlight: ''
-  },
-  severeImpact = {
-    currentlyInfected: '',
-    infectionsByRequestedTime: '',
-    severeCasesByRequestedTime: '',
-    hospitalBedsByRequestedTime: '',
-    casesForICUByRequestedTime: '',
-    casesForVentilatorsByRequestedTime: '',
-    dollarsInFlight: ''
-  },
-  impact: {},
-  severeImpact: {},
-}
-  
+const impact = (currentlyInfected, infectionsByRequestedTime, severeCasesByRequestedTime, hospitalBedsByRequestedTime, casesForICUByRequestedTime, casesForVentilatorsByRequestedTime, dollarsInFlight) => {
+  this.currentlyInfected = currentlyInfected,
+  this.infectionsByRequestedTime = infectionsByRequestedTime,
+  this.severeCasesByRequestedTime = severeCasesByRequestedTime,
+  this.hospitalBedsByRequestedTime = hospitalBedsByRequestedTime,
+  this.casesForICUByRequestedTime = casesForICUByRequestedTime,
+  this.casesForVentilatorsByRequestedTime = casesForVentilatorsByRequestedTime,
+  this.dollarsInFlight = dollarsInFlight;
+};
+const severeImpact = (currentlyInfected, infectionsByRequestedTime, severeCasesByRequestedTime, hospitalBedsByRequestedTime, casesForICUByRequestedTime, casesForVentilatorsByRequestedTime, dollarsInFlight) => {
+  this.currentlyInfected = currentlyInfected,
+  this.infectionsByRequestedTime = infectionsByRequestedTime,
+  this.severeCasesByRequestedTime = severeCasesByRequestedTime,
+  this.hospitalBedsByRequestedTime = hospitalBedsByRequestedTime,
+  this.casesForICUByRequestedTime = casesForICUByRequestedTime,
+  this.casesForVentilatorsByRequestedTime = casesForVentilatorsByRequestedTime,
+  this.dollarsInFlight = dollarsInFlight;
+};
+let days;
+
 if (data.periodType === 'days') { days = data.timeToElapse; }
 else if (data.periodType === 'weeks') { days = 7 * data.timeToElapse; }
 else if (data.periodType === 'months') { days = 30 * data.timeToElapse; }
