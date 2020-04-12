@@ -38,14 +38,14 @@ const covid19ImpactEstimator = () => {
     this.infectionsByRequestedTime = infectionsByRequestedTime;
   };
   impact.currentlyInfected = data.reportedCases * 10;
-  const trunk = (factor) =>{
+  const trunk = () => {
     return impact.currentlyInfected * 2 ** factor;
-  }
-  impact.infectionsByRequestedTime = trunk
+  };
+  impact.infectionsByRequestedTime = trunk;
   severeImpact.currentlyInfected = data.reportedCases * 50;
-  const trap = (factor) =>{
+  const trap = () => {
     return severeImpact.currentlyInfected * 2 ** factor;
-  }
+  };
   severeImpact.infectionsByRequestedTime = trap;
   return {
     data: {},
