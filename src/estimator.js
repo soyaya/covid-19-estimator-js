@@ -29,45 +29,18 @@ const covid19ImpactEstimator = () => {
     }
     return getFactor;
   };
-  const impact = (currentlyInfected, infectionsByRequestedTime) => { /*,
-    severeCasesByRequestedTime, hospitalBedsByRequestedTime,
-    casesForICUByRequestedTime, casesForVentilatorsByRequestedTime,
-    dollarsInFlight*/
+  const impact = (currentlyInfected, infectionsByRequestedTime) => {
     this.currentlyInfected = currentlyInfected;
     this.infectionsByRequestedTime = infectionsByRequestedTime;
-    /*this.severeCasesByRequestedTime = severeCasesByRequestedTime;
-    this.hospitalBedsByRequestedTime = hospitalBedsByRequestedTime;
-    this.casesForICUByRequestedTime = casesForICUByRequestedTime;
-    this.casesForVentilatorsByRequestedTime = casesForVentilatorsByRequestedTime;
-    this.dollarsInFlight = dollarsInFlight;*/
   };
   const severeImpact = (currentlyInfected, infectionsByRequestedTime) => {
-    /* ,
-    severeCasesByRequestedTime, hospitalBedsByRequestedTime,
-    casesForICUByRequestedTime, casesForVentilatorsByRequestedTime,
-    dollarsInFlight*/
     this.currentlyInfected = currentlyInfected;
     this.infectionsByRequestedTime = infectionsByRequestedTime;
-    /* this.severeCasesByRequestedTime = severeCasesByRequestedTime;
-    this.hospitalBedsByRequestedTime = hospitalBedsByRequestedTime;
-    this.casesForICUByRequestedTime = casesForICUByRequestedTime;
-    this.casesForVentilatorsByRequestedTime = casesForVentilatorsByRequestedTime;
-    this.dollarsInFlight = dollarsInFlight;*/
   };
   impact.currentlyInfected = data.reportedCases * 10;
   impact.infectionsByRequestedTime = impact.currentlyInfected * 2 ** factor;
   severeImpact.currentlyInfected = data.reportedCases * 50;
   severeImpact.infectionsByRequestedTime = severeImpact.currentlyInfected * 2 ** factor;
-  /* impact.severeCasesByRequestedTime = Math.ceil(0.15 * impact.infectionsByRequestedTime);
-  severeImpact.severeCasesByRequestedTime = Math.ceil(0.15 * severeImpact.infectionsByRequestedTime);
-  impact.hospitalBedsByRequestedTime = Math.ceil(impact.severeCasesByRequestedTime - 0.35 * data.totalHospitalBeds);
-  severeImpact.hospitalBedsByRequestedTime = Math.ceil(severeImpact.severeCasesByRequestedTime - 0.35 * data.totalHospitalBeds);
-  impact.casesForICUByRequestedTime = 0.05 * impact.infectionsByRequestedTime;
-  severeImpact.casesForICUByRequestedTime = 0.05 * severeImpact.infectionsByRequestedTime;
-  impact.casesForVentilatorsByRequestedTime = 0.02 * impact.infectionsByRequestedTime;
-  severeImpact.casesForVentilatorsByRequestedTime = 0.02 * severeImpact.infectionsByRequestedTime;
-  impact.dollarsInFlight = Math.trunc((impact.infectionsByRequestedTime * data.avgDailyIncomeInUSD * data.avgDailyIncomePopulation) / 30);
-  severeImpact.dollarsInFlight = Math.trunc((severeImpact.infectionsByRequestedTime * data.avgDailyIncomeInUSD * data.avgDailyIncomePopulation) / 30);*/
   return {
     data: {},
     impact: {},
