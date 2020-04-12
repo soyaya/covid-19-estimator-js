@@ -48,10 +48,18 @@ const covid19ImpactEstimator = () => {
   };
   severeImpact.infectionsByRequestedTime = trap;
   return {
-    data: {},
+    outPut: {
+      impact: {
+        currentlyInfected: '',
+        infectionsByRequestedTime: ''
+            },
+      severeImpact: { 
+        currentlyInfected: '',
+        infectionsByRequestedTime: ''
+                  }
+                  },
     impact: {},
     severeImpact: {}
   };
 };
-
 export default covid19ImpactEstimator;
