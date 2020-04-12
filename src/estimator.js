@@ -29,14 +29,6 @@ const covid19ImpactEstimator = () => {
     }
     return getFactor;
   };
-  const impact = (currentlyInfected, infectionsByRequestedTime) => {
-    this.currentlyInfected = currentlyInfected;
-    this.infectionsByRequestedTime = infectionsByRequestedTime;
-  };
-  const severeImpact = (currentlyInfected, infectionsByRequestedTime) => {
-    this.currentlyInfected = currentlyInfected;
-    this.infectionsByRequestedTime = infectionsByRequestedTime;
-  };
   impact.currentlyInfected = data.reportedCases * 10;
   const trunk = () => {
     return impact.currentlyInfected * 2 ** factor;
@@ -47,6 +39,14 @@ const covid19ImpactEstimator = () => {
     return severeImpact.currentlyInfected * 2 ** factor;
   };
   severeImpact.infectionsByRequestedTime = trap;
+  const impact = (currentlyInfected, infectionsByRequestedTime) => {
+    this.currentlyInfected = currentlyInfected;
+    this.infectionsByRequestedTime = infectionsByRequestedTime;
+  };
+  const severeImpact = (currentlyInfected, infectionsByRequestedTime) => {
+    this.currentlyInfected = currentlyInfected;
+    this.infectionsByRequestedTime = infectionsByRequestedTime;
+  };
   return {
     data: {},
     impact: {},
