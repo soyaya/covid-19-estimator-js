@@ -52,12 +52,12 @@ const covid19ImpactEstimator = () => {
       impact: {
         currentlyInfected: '',
         infectionsByRequestedTime: ''
-            },
-      severeImpact: { 
+      },
+      severeImpact: {
         currentlyInfected: '',
         infectionsByRequestedTime: ''
-                  }
-                  },
+      }
+    },
     impact: {},
     severeImpact: {}
   };
