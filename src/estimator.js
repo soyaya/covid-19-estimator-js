@@ -14,26 +14,32 @@ const factor = (data) => {
   }
   return getFactor;
 };
+
+
 const covid19ImpactEstimator = (data) => {
+  const cofactor = data.reportedCases * 10;
+  const cisfactor = data.reportedCases * 50;
+  const rfactor = (2 ** factor(data));
+
   return {
     data,
     impact: {
-      currentlyInfected: (data.reportedCases * 10),
-      infectionsByRequestedTime: (data.reportedCases * 10) * (2 ** factor(data)),
-      severeCasesByRequestedTime: (Math.ceil(0.15 * (data.reportedCases * 10) * (2 ** factor(data)))),
-      hospitalBedsByRequestedTime: ((Math.ceil(0.35 * (data.totalHospitalBeds))) - (Math.ceil(0.15 * (data.reportedCases * 10) * (2 ** factor(data))))),
-      casesForICUByRequestedTime: (0.05 * Math.trunc((data.reportedCases * 10) * (2 ** factor(data)))),
-      casesForVentilatorsByRequestedTime: (0.02 * Math.trunc((data.reportedCases * 10) * (2 ** factor(data)))),
-      dollarsInFlight: (Math.trunc(((data.reportedCases * 10) * (2 ** factor(data)) * (data.avgDailyIncomeInUSD) * (data.avgDailyIncomePopulation)) / 30))
+      currentlyInfected: cofactor,
+      infectionsByRequestedTime: cofactor * rfactor,
+      severeCasesByRequestedTime: (Math.ceil(0.15 * cofactor * rfactor)),
+      hospitalBedsByRequestedTime: ((Math.ceil(0.35 * (data.totalHospitalBeds))) - (Math.ceil(0.15 * cofactor * rfactor))),
+      casesForICUByRequestedTime: (0.05 * Math.trunc(cofactor * rfactor)),
+      casesForVentilatorsByRequestedTime: (0.02 * Math.trunc(cofactor * rfactor)),
+      dollarsInFlight: (Math.trunc((cofactor * rfactor * (data.avgDailyIncomeInUSD) * (data.avgDailyIncomePopulation)) / 30))
     },
     severeImpact: {
-      currentlyInfected: (data.reportedCases * 50),
-      infectionsByRequestedTime: ((data.reportedCases * 50) * (2 ** factor(data))),
-      severeCasesByRequestedTime: (Math.ceil(0.15 * (data.reportedCases * 50) * (2 ** factor(data)))),
-      hospitalBedsByRequestedTime: ((Math.ceil(0.35 * (data.totalHospitalBeds))) - (Math.ceil(0.15 * (data.reportedCases * 50) * (2 ** factor(data))))),
-      casesForICUByRequestedTime: (0.05 * Math.trunc((data.reportedCases * 50) * (2 ** factor(data)))),
-      casesForVentilatorsByRequestedTime: (0.02 * Math.trunc((data.reportedCases * 50) * (2 ** factor(data)))),
-      dollarsInFlight: (Math.trunc(((data.reportedCases * 50) * (2 ** factor(data)) * (data.avgDailyIncomeInUSD) * (data.avgDailyIncomePopulation)) / 30))
+      currentlyInfected: cisfactor,
+      infectionsByRequestedTime: (cisfactor * rfactor),
+      severeCasesByRequestedTime: (Math.ceil(0.15 * cisfactor * rfactor)),
+      hospitalBedsByRequestedTime: ((Math.ceil(0.35 * (data.totalHospitalBeds))) - (Math.ceil(0.15 * cisfactor * rfactor))),
+      casesForICUByRequestedTime: (0.05 * Math.trunc(cisfactor * rfactor)),
+      casesForVentilatorsByRequestedTime: (0.02 * Math.trunc(cisfactor * rfactor)),
+      dollarsInFlight: (Math.trunc((cisfactor * rfactor * (data.avgDailyIncomeInUSD) * (data.avgDailyIncomePopulation)) / 30))
     }
   };
 };
