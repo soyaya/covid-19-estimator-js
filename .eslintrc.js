@@ -20,7 +20,7 @@ module.exports = {
     "comma-dangle": ["error", "never"],
     "no-param-reassign": ["error", { "props": false }],
     "arrow-body-style": ["error", "always"],
-    "max-len": ["error", { "code": 150 }],
+    "max-len": ["error", { "code": 200 }],
     "brace-style": [2, "stroustrup", { "allowSingleLine": true }]
 
   },
