@@ -28,8 +28,8 @@ const covid19ImpactEstimator = (data) => {
       infectionsByRequestedTime: cofactor * rfactor,
       severeCasesByRequestedTime: (Math.ceil(0.15 * cofactor * rfactor)),
       hospitalBedsByRequestedTime: ((Math.ceil(0.35 * (data.totalHospitalBeds))) - (Math.ceil(0.15 * cofactor * rfactor))),
-      casesForICUByRequestedTime: (0.05 * Math.trunc(cofactor * rfactor)),
-      casesForVentilatorsByRequestedTime: (0.02 * Math.trunc(cofactor * rfactor)),
+      casesForICUByRequestedTime: (0.05 * (cofactor * rfactor)),
+      casesForVentilatorsByRequestedTime: (0.02 * (cofactor * rfactor)),
       dollarsInFlight: (Math.trunc((cofactor * rfactor * (data.avgDailyIncomeInUSD) * (data.avgDailyIncomePopulation)) / 30))
     },
     severeImpact: {
