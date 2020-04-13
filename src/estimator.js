@@ -32,7 +32,7 @@ const covid19ImpactEstimator = (data) => {
       severeCasesByRequestedTime: Math.ceil(0.15 * data.reportedCases * 50 * (2 ** factor(data))),
       hospitalBedsByRequestedTime: (Math.ceil(0.35 * (data.totalHospitalBeds))) - (Math.ceil(0.15 * (data.reportedCases * 50) * (2 ** factor(data)))),
       casesForICUByRequestedTime: Math.ceil(0.05 * data.reportedCases * 50 * (2 ** factor(data))),
-      casesForVentilatorsByRequestedTime: Math.ceil(0.02 * (data.reportedCases * 50) * (2 ** factor(data))),
+      casesForVentilatorsByRequestedTime: Math.ceil(0.02 * data.reportedCases * 50 * (2 ** factor(data))),
       dollarsInFlight: Math.trunc(((data.reportedCases * 50) * (2 ** factor(data)) * data.avgDailyIncomeInUSD * data.avgDailyIncomePopulation) / 30)
     }
   };
