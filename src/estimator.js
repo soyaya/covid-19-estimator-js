@@ -17,8 +17,8 @@ const factor = (data) => {
 
 
 const covid19ImpactEstimator = (data) => {
-  const cofactor = Math.trunc(data.reportedCases * 10);
-  const cisfactor = Math.trunc(data.reportedCases * 50);
+  const cofactor = Math.ceil(data.reportedCases * 10);
+  const cisfactor = Math.ceil(data.reportedCases * 50);
   const rfactor = Math.trunc(2 ** factor(data));
 
   return {
