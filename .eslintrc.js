@@ -18,6 +18,11 @@ module.exports = {
   },
   rules: {
     "comma-dangle": ["error", "never"],
-    "no-param-reassign": ["error", { "props": false }]
+    "no-param-reassign": ["error", { "props": false }],
+    "arrow-body-style": ["error", "always"],
+    "max-len": ["error", { "code": 200 }],
+    "brace-style": [2, "stroustrup", { "allowSingleLine": true }]
+
   },
 };
+ 
