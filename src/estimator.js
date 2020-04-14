@@ -10,7 +10,7 @@ const factor = (data) => {
     getFactor = Math.trunc((data.timeToElapse * 30) / 3);
   }
   else {
-    getFactor = 1;
+    getFactor = data.timeToElapse;
   }
   return getFactor;
 };
@@ -19,7 +19,7 @@ const factor = (data) => {
 const covid19ImpactEstimator = (data) => {
   const cofactor = data.reportedCases * 10;
   const cisfactor = data.reportedCases * 50;
-  const rfactor = (2 ** factor(data));
+  const rfactor = Math.trunc(2 ** factor(data));
 
   return {
     data,
