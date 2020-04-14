@@ -26,7 +26,7 @@ const covid19ImpactEstimator = (data) => {
     impact: {
       currentlyInfected: cofactor,
       infectionsByRequestedTime: cofactor * rfactor,
-      severeCasesByRequestedTime: (Math.ceil(0.15 * cofactor * rfactor)),
+      severeCasesByRequestedTime: Math.ceil(0.15 * cofactor * rfactor),
       hospitalBedsByRequestedTime: ((Math.ceil(0.35 * (data.totalHospitalBeds))) - (Math.ceil(0.15 * cofactor * rfactor))),
       casesForICUByRequestedTime: 0.05 * cofactor * rfactor,
       casesForVentilatorsByRequestedTime: 0.02 * cofactor * rfactor,
@@ -35,7 +35,7 @@ const covid19ImpactEstimator = (data) => {
     severeImpact: {
       currentlyInfected: cisfactor,
       infectionsByRequestedTime: (cisfactor * rfactor),
-      severeCasesByRequestedTime: (Math.ceil(0.15 * cisfactor * rfactor)),
+      severeCasesByRequestedTime: Math.ceil(0.15 * cisfactor * rfactor),
       hospitalBedsByRequestedTime: ((Math.ceil(0.35 * (data.totalHospitalBeds))) - (Math.ceil(0.15 * cisfactor * rfactor))),
       casesForICUByRequestedTime: 0.05 * cisfactor * rfactor,
       casesForVentilatorsByRequestedTime: 0.02 * cisfactor * rfactor,
