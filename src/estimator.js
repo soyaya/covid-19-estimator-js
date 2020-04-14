@@ -26,8 +26,8 @@ const covid19ImpactEstimator = (data) => {
     impact: {
       currentlyInfected: cofactor,
       infectionsByRequestedTime: cofactor * rfactor,
-      severeCasesByRequestedTime: Math.trunc(0.15 * cofactor * rfactor),
-      hospitalBedsByRequestedTime: (Math.trunc(0.35 * (data.totalHospitalBeds))) - (Math.trunc(0.15 * cofactor * rfactor)),
+      severeCasesByRequestedTime: Math.ceil(0.15 * cofactor * rfactor),
+      hospitalBedsByRequestedTime: (Math.ceil(0.35 * (data.totalHospitalBeds))) - (Math.ceil(0.15 * cofactor * rfactor)),
       casesForICUByRequestedTime: 0.05 * cofactor * rfactor,
       casesForVentilatorsByRequestedTime: (0.02 * cofactor * rfactor),
       dollarsInFlight: Math.trunc(((cofactor * rfactor * data.avgDailyIncomeInUSD * data.avgDailyIncomePopulation) / factor))
@@ -35,8 +35,8 @@ const covid19ImpactEstimator = (data) => {
     severeImpact: {
       currentlyInfected: cisfactor,
       infectionsByRequestedTime: (cisfactor * rfactor),
-      severeCasesByRequestedTime: (Math.trunc(0.15 * cisfactor * rfactor)),
-      hospitalBedsByRequestedTime: (Math.trunc(0.35 * (data.totalHospitalBeds))) - (Math.trunc(0.15 * cisfactor * rfactor)),
+      severeCasesByRequestedTime: (Math.ceil(0.15 * cisfactor * rfactor)),
+      hospitalBedsByRequestedTime: (Math.ceil(0.35 * (data.totalHospitalBeds))) - (Math.ceil(0.15 * cisfactor * rfactor)),
       casesForICUByRequestedTime: (0.05 * cisfactor * rfactor),
       casesForVentilatorsByRequestedTime: Math.trunc(0.02 * cisfactor * rfactor),
       dollarsInFlight: Math.trunc(((cisfactor * rfactor * data.avgDailyIncomeInUSD * data.avgDailyIncomePopulation) / factor))
